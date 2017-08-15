@@ -103,7 +103,7 @@ The code for my perspective transform includes a function called `perspective_tr
 
 This resulted in the following source and destination points:
 
-|:-------------:| Source        | Destination   | 
+|               | Source        | Destination   | 
 |:-------------:|:-------------:|:-------------:| 
 |:top left-----:| 585, 470      | 300, 300        | 
 |:right bottom-:| 220, 720      | 300, 720      |
@@ -152,4 +152,4 @@ Here's a [video1]:
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-I first 
+I first use the Histogram method first and i find that most of the time the line would not change on the road. The reason is that the range for accurancy by using the Histogram method is not enough to detect the curve on the road. So I apply another method Convolutional search and find that this would give accurancy data to detect the road. However, the idea could figure out most of the time on the video.Some shadow of the tree cause the S channel fails to get the lines. Also the bumpy road would lead to the perspective transform matrix changes. I skipped some bad frames to avoid it. The result video looks quit good.(See the line_valid in Line class for more information.)
